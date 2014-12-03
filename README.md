@@ -31,9 +31,13 @@ A select2 wrapper for Stackla tagging control.
     
 ## Render By JavaScript
 
+### HTML
+
 ```html
 <span id="wrapper"></span>
 ```
+
+### JavaScript
 
 ```js
 var tagging = new Tagging('wrapper', {
@@ -52,6 +56,14 @@ var tagging = new Tagging('wrapper', {
         {label: 'fun', value: 4, selected: true},   
         {label: 'goo', value: 5}  
     ]    
+});
+```
+
+Or...
+
+```js
+$('#wrapper').tagging({
+    // the same as above
 });
 ```
 
