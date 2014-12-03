@@ -1,4 +1,55 @@
-tagging
+Tagging
 =======
 
-Tagging Control for Stackla
+A select2 wrapper for Stackla tagging control.
+
+## Render By HTML
+
+```html
+<span class="tagging"
+     data-toggle="tagging" 
+     data-tagging-mode="view"
+     data-tagging-load-url="/api/tags?total=100"
+     data-tagging-add-url="/api/tags/add?tag={value}" />
+     <span class="tagging-view">
+         <span data-tag-label="foo" data-tag-value="1">foo</span>
+         <span data-tag-label="bar" data-tag-value="2">bar</span>
+         <span data-tag-label="zoo" data-tag-value="3">zoo</span>
+         <span data-tag-label="fun" data-tag-value="4">fun</span>
+    </span>
+    <span class="tagging-modify">
+        <select multiple="multiple"><!-- Could be omitted -->
+            <option value="1" selected>foo</option>
+            <option value="2" selected>bar</option>
+            <option value="3" selected>zoo</option>
+            <option value="4" selected>fun</option>
+            <option value="5">goo</option>
+        </select>
+    </span>
+</span>
+```
+    
+## Render By JavaScript
+
+```html
+<span id="wrapper"></span>
+```
+
+```js
+var tagging = new Tagging('wrapper', {
+    loadUrl: '/api/tags?stack=vari&limit=100',
+    loadMethod: 'GET',
+    loadCallback: function (data) {},
+    mode: 'view',
+    saveUrl: '/api/tags?stack=vari&tag={label}',
+    saveMethod: 'PUT',
+    saveCallback: function (data, label) {},
+    tags: [
+        {label: 'foo', value: 1, selected: true},
+        {label: 'bar', value: 2, selected: true},    
+        {label: 'zoo', value: 3, selected: true},    
+        {label: 'fun', value: 4, selected: true},   
+        {label: 'goo', value: 5}  
+    ]    
+});
+```
