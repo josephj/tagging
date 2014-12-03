@@ -41,6 +41,7 @@ var tagging = new Tagging('wrapper', {
     loadMethod: 'GET',
     loadCallback: function (data) {},
     mode: 'view',
+    multiple: true,
     saveUrl: '/api/tags?stack=vari&tag={label}',
     saveMethod: 'PUT',
     saveCallback: function (data, label) {},
