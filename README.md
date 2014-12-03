@@ -10,7 +10,8 @@ A select2 wrapper for Stackla tagging control.
      data-toggle="tagging" 
      data-tagging-mode="view"
      data-tagging-load-url="/api/tags?total=100"
-     data-tagging-add-url="/api/tags/add?tag={value}" />
+     data-tagging-search-url="/api/tags?search?tag={label}" 
+     data-tagging-add-url="/api/tags/add?tag={label}" />
      <span class="tagging-view">
          <span data-tag-label="foo" data-tag-value="1">foo</span>
          <span data-tag-label="bar" data-tag-value="2">bar</span>
