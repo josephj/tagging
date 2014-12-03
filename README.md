@@ -48,18 +48,20 @@ var tagging = new Tagging('wrapper', {
     multiple: true,
     saveUrl: '/api/tags?stack=vari&tag={label}',
     saveMethod: 'PUT',
-    // Be careful with return value, you should always return something it needs.
-    onBeforeLoad: function (xhrSettings) { return xhrSettings; },
-    onBeforeSave: function (xhrSettings) { return xhrSettings; },
-    onLoad: function (data) { return data; },
-    onSave: function (data) { return data; },
     tags: [
         {label: 'foo', value: 1, selected: true},
         {label: 'bar', value: 2, selected: true},    
         {label: 'zoo', value: 3, selected: true},    
         {label: 'fun', value: 4, selected: true},   
         {label: 'goo', value: 5}  
-    ]    
+    ],
+    // Be careful with return value, you should always return something it needs.
+    onBeforeLoad: function (xhrSettings) { return xhrSettings; },
+    onBeforeSave: function (xhrSettings) { return xhrSettings; },
+    onBeforeSearch: function (xhrSettings) { return xhrSettings; },
+    onLoad: function (data) { return data; },
+    onSave: function (data) { return data; },
+    onSearch: function (data) { return data; }
 });
 ```
 
