@@ -44,12 +44,15 @@ A select2 wrapper for Stackla tagging control.
 var tagging = new Tagging('wrapper', {
     loadUrl: '/api/tags?stack=vari&limit=100',
     loadMethod: 'GET',
-    loadCallback: function (data) {},
     mode: 'view',
     multiple: true,
     saveUrl: '/api/tags?stack=vari&tag={label}',
     saveMethod: 'PUT',
-    saveCallback: function (data, label) {},
+    // Be careful with return value, you should always return something it needs.
+    onBeforeLoad: function (xhrSettings) { return xhrSettings; },
+    onBeforeSave: function (xhrSettings) { return xhrSettings; },
+    onLoad: function (data) { return data; },
+    onSave: function (data) { return data; },
     tags: [
         {label: 'foo', value: 1, selected: true},
         {label: 'bar', value: 2, selected: true},    
