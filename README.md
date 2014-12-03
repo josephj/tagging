@@ -54,3 +54,20 @@ var tagging = new Tagging('wrapper', {
     ]    
 });
 ```
+
+## Methods
+
+* `addTag` - Select a tag
+* `refresh` - Refresh to get the latest data
+* `removeTag` - Remove a specific tag
+* `setMode` - The param could be 'view' or 'modify'
+* `hasTag` - Check if a tag exists
+* `toggle` - Switch the mode
+
+## Events
+
+* `render`
+* `load`
+* `save`
+* `toggle`
+* `refresh`
