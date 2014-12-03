@@ -1,5 +1,5 @@
-Tagging
-=======
+select2-tagging
+----------------
 
 A select2 wrapper for Stackla tagging control.
 
